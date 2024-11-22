@@ -1,0 +1,37 @@
+div[path="used-car-finder/real"] {
+    /* & {
+        background: #345fda !important;
+    }
+    
+    & > form > label {
+        & {}
+
+        & input[type=number] {
+            & {
+                color: #fff !important;
+                background: #122e6e !important;
+            }
+
+            &:focus {
+                color: #000 !important;
+                background: #fff !important;
+            }
+
+            &::placeholder {
+                color: #c2c1fb !important;
+            }
+            &:focus::placeholder {
+                color: #333 !important;
+            }
+        }
+
+        & > span {
+            color: #fff !important;
+        }
+    }
+
+    & > .btn-area > button {
+        & { color: #fff !important; }
+        &.submit  { background: #fff !important; color: #345fda !important; }
+    } */
+}
