@@ -4,7 +4,7 @@ import { BaseRootComp } from './utils'
 import {Root, ErrorPage} from "../app";
 import {
     UsedCarFinder,
-    Dream, Real
+    Form
 } from "../pages";
 
 
@@ -24,8 +24,7 @@ const routerConf = [
         errorElement: <ErrorPage />,
         children: [
             { path: 'used-car-finder', element: <UsedCarFinder />, index: true },
-            { path: 'used-car-finder/dream', element: <Dream /> },
-            { path: 'used-car-finder/real', element: <Real /> },
+            { path: 'used-car-finder/form', element: <Form /> },
         ]
     },
 ];

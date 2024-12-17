@@ -1,3 +1,2 @@
 export * from './used-car-finder/index'
-export * from './used-car-finder/dream'
-export * from './used-car-finder/real'
+export * from './used-car-finder/form'
