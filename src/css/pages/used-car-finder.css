@@ -1,4 +1,5 @@
 @import './used-car-finder/form.css';
+@import './used-car-finder/result.css';
 
 div[path=used-car-finder] {
     & {

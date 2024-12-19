@@ -31,10 +31,21 @@ const routerConf = [
                 element: <Result />,
                 loader: ({params}: {
                     params: {
-                        annualSalary: number;     // 연봉 입력 값
-                        budget: number;           // 여유 예산 값
+                        annualSalary?: string;     // 연봉 입력 값
+                        budget?: string;           // 여유 예산 값
                     }
-                }) => params || {annualSalary: 0, budget: 0}
+                }) => {
+                    const res: any = {};
+                    const items = params as any;
+
+                    // 입력 값 전부 Number 타입으로 변환
+                    for( const key in items ){
+                        const val = Number(items[key]);
+                        res[key] = isNaN(val) ? 0 : val; 
+                    }
+
+                    return res;
+                }
             },
         ]
     },
