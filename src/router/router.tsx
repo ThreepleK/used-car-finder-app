@@ -1,10 +1,11 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { type RouteObject, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { BaseRootComp } from './utils'
 
 import {Root, ErrorPage} from "../app";
 import {
     UsedCarFinder,
-    Form
+    Form,
+    Result
 } from "../pages";
 
 
@@ -25,6 +26,16 @@ const routerConf = [
         children: [
             { path: 'used-car-finder', element: <UsedCarFinder />, index: true },
             { path: 'used-car-finder/form', element: <Form /> },
+            {
+                path: 'used-car-finder/result/:annualSalary/:budget',
+                element: <Result />,
+                loader: ({params}: {
+                    params: {
+                        annualSalary: number;     // 연봉 입력 값
+                        budget: number;           // 여유 예산 값
+                    }
+                }) => params || {annualSalary: 0, budget: 0}
+            },
         ]
     },
 ];
@@ -32,7 +43,7 @@ const routerConf = [
 /**
  * 라우터에 사용될 값으로 변경
  */
-const router = createBrowserRouter(routerConf);
+const router = createBrowserRouter(routerConf as RouteObject[]);
 
 /**
  * 앱 라우터 컴포넌트

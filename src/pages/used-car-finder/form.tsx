@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * 입력 컴포넌트
@@ -80,6 +81,7 @@ const ValidationCompo = ({msg, isShow}: {
 export const Form = () => {
     const [isValiShow, setIsValiShow] = useState(false);
     const [valiMsg, setValiMsg] = useState('');
+    const navigate = useNavigate();
 
     const onSubmit = (annualSalary: number, budget: number) => {
         // 연봉이 입력되지 않았을 경우
@@ -95,8 +97,8 @@ export const Form = () => {
             setValiMsg('');
         }
 
-        console.log('연봉', annualSalary);
-        console.log('예산', budget);
+        // 결과 페이지로 이동
+        navigate(`/used-car-finder/result/${annualSalary}/${budget}`);
     };
 
     return <>
