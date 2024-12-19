@@ -22,7 +22,7 @@ const ResultRealType = ({params}: {
     </>;
 }
 
-//* 희망편편
+//* 희망편
 const ResultDreamType = ({params}: {
     params: LoaderData
 }) => {
@@ -56,14 +56,14 @@ export const Result = () => {
                     <dt>예산</dt>
                     <dd>{budget.toLocaleString('ko-KR')}만원</dd>
                 </dl>
-
-                <div className='info-icon'>✨</div>
             </div>
         </section>
 
+        <div className='img-car'></div>
+
         <section className='result-area'>
-            {/* <ResultRealType {...{params: loaderData}} />
-            <ResultDreamType {...{params: loaderData}} /> */}
+            <ResultRealType {...{params: loaderData}} />
+            <ResultDreamType {...{params: loaderData}} />
         </section>
     </>;
 }

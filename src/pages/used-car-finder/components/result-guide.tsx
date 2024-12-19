@@ -3,5 +3,6 @@ export const ResultGuide = ({ type, annualSalary, budget }: {
     annualSalary: number;   // 연봉
     budget: number;         // 예산
 }) => {
+    console.log(annualSalary, budget);
     return <>{type} 가이드</>;
 }
